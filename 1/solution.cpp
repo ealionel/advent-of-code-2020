@@ -12,6 +12,8 @@ int main() {
     }
 
     // First part
+    // Time Complexity : O(n)
+    // Space Complexity : O(1) at most 2020 values in the hash table
 
     unordered_map<int, int> complements;
     for (auto y : years) {
@@ -25,6 +27,8 @@ int main() {
     }
 
     // Second part
+    // Time Complexity : O(n^2)
+    // Space Complexity : O(1) at most 2020 values in the hash tables
 
     for (auto t : years) {
         int target = 2020 - t;

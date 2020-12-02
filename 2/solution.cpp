@@ -35,6 +35,12 @@ int main() {
         cin >> tmp;
 
         // First part
+        // Time Complexity : O(n)
+        //      One traversal to populate the hash table = O(n)
+        //      Letter lookup in hash table = O(1)
+        //      O(n) + O(1) = O(n)
+
+        // Space Complexity : O(1) (the hashmap contains at most 26 entries)
 
         for (auto c : tmp) {
             if (occurence.find(c) == occurence.end()) {
@@ -51,6 +57,9 @@ int main() {
         }
 
         // Second part
+        // Time Complexity : O(1)
+        // Space Complexity : O(1)
+
         bool a = tmp.size() >= min && tmp[min - 1] == letter;
         bool b = tmp.size() >= max && tmp[max - 1] == letter;
 
