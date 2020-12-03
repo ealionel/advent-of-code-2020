@@ -50,24 +50,24 @@ int main() {
             }
         }
 
-        if (occurence.find(letter) != occurence.end()) {
-            if (occurence[letter] >= min && occurence[letter] <= max) {
-                nb_valid++;
-            }
-        }
-
-        // Second part
-        // Time Complexity : O(1)
-        // Space Complexity : O(1)
-
-        bool a = tmp.size() >= min && tmp[min - 1] == letter;
-        bool b = tmp.size() >= max && tmp[max - 1] == letter;
-
-        if (a ^ b) {
-            nb_valid_second++;
+        if (occurence.find(letter) != occurence.end() &&
+            occurence[letter] >= min && occurence[letter] <= max) {
+            nb_valid++;
         }
     }
 
-    cout << nb_valid << " valid strings (part 1)" << endl;
-    cout << nb_valid_second << " valid strings (part 2)" << endl;
+    // Second part
+    // Time Complexity : O(1)
+    // Space Complexity : O(1)
+
+    bool a = tmp.size() >= min && tmp[min - 1] == letter;
+    bool b = tmp.size() >= max && tmp[max - 1] == letter;
+
+    if (a ^ b) {
+        nb_valid_second++;
+    }
+}
+
+cout << nb_valid << " valid strings (part 1)" << endl;
+cout << nb_valid_second << " valid strings (part 2)" << endl;
 }
