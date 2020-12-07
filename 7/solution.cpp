@@ -59,8 +59,8 @@ int count_bags(string bag,
     auto bags = contains[bag];
 
     for (auto b : bags) {
-        count += b.second;
-        count += count_bags(b.first, contains) * b.second;
+        int bags_count = b.second;
+        count += bags_count + count_bags(b.first, contains) * bags_count;
     }
 
     return count;
@@ -69,9 +69,13 @@ int count_bags(string bag,
 int main() {
     string line;
 
+    // Map representing the list of bags color (value) that contains a bag of
+    // color (key)
     unordered_map<string, vector<string>> contained_by;
     unordered_map<string, bool> visited;
 
+    // Hashtable representing the list of bags and their number (value) that
+    // must contain a bag of color (key)
     unordered_map<string, vector<pair<string, int>>> contains;
 
     while (getline(cin, line)) {
