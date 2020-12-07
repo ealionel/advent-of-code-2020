@@ -38,3 +38,4 @@ Program will be run with corresponding day's `input.txt` in standard input.
 * [**Day 4:** Passport Processing](./4)
 * [**Day 5:** Binary Boarding](./5)
 * [**Day 6:** Custom Customs](./6)
+* [**Day 7:** Handy Haversacks](./7)
