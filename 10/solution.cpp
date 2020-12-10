@@ -29,6 +29,26 @@ int main() {
         prev = v;
     }
 
+    // Second part
+    // Time Complexity : O(n) with memoized top-down approach :
+    //      - the i-th adapter, has all the possible combination of all the
+    //      adapters that it can be plugged to (so adapters that have a
+    //      difference value of maximum 3)
+    //
+    // Space Complexity : O(n)
+
+    vector<long long int> dp(adapters.size(), 0);
+    dp.back() = 1;
+
+    for (int i = dp.size() - 2; i >= 0; i--) {
+        for (int j = 1; j < min((size_t)4, dp.size() - i); j++) {
+            int diff = adapters[i + j] - adapters[i];
+
+            if (diff <= 3) dp[i] += dp[i + j];
+        }
+    }
+
     printf("%d * %d = %d is the answer (first part)\n", diff_count[0],
            diff_count[2], diff_count[0] * diff_count[2]);
+    printf("There is %lld possible combination (second part)\n", dp[0]);
 }
