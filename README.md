@@ -11,7 +11,7 @@ From the root of the repository, use :
 ```shell
 make build day={DAY}
 
-# For example this will buidl day 1 solution
+# For example this will build day 1 solution
 make build day=1 
 ```
 
@@ -22,10 +22,13 @@ Program will be built in corresponding `./$(DAY)` directory.
 From the root of the repository, use :
 
 ```shell
-make test day={DAY}
+make test day={DAY} input={INPUT_FILE}
 
-# For example this will test day 1 solution with my `input.txt` content
+# For example this will test day 1 solution with `./1/input.txt` file content
 make test day=1
+
+# For example this will test day 1 solution with my `./1/test.txt` file content
+make test day=1 input={test.txt}
 ```
 
 Program will be run with corresponding day's `input.txt` in standard input.
