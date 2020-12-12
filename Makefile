@@ -6,7 +6,11 @@ build:
 	$(CC) ./$(day)/solution.cpp -o ./$(day)/solution.out $(CFLAGS)
 
 test: build
+ifdef input
+	./$(day)/solution.out < ./$(day)/$(input)
+else
 	./$(day)/solution.out < ./$(day)/input.txt
+endif
 
 clean:
 	rm ./$(day)/*.out
