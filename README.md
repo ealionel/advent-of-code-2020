@@ -39,3 +39,8 @@ Program will be run with corresponding day's `input.txt` in standard input.
 * [**Day 5:** Binary Boarding](./5)
 * [**Day 6:** Custom Customs](./6)
 * [**Day 7:** Handy Haversacks](./7)
+* [**Day 8:** Handheld Halting](./8)
+* [**Day 9:** Encoding Error](./9)
+* [**Day 10:** Adapter Array](./10)
+* [**Day 11:** Seating System](./11)
+* [**Day 12:** Rain Risk](./12)
