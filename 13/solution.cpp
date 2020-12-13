@@ -4,10 +4,12 @@
 
 using namespace std;
 
+int mod(int a, int b) { return (b + (a % b)) % b; }
+
 bool check_cond(unsigned long long int t, vector<pair<int, int>> buses) {
     // cout << endl;
     for (auto bus : buses) {
-        // cout << "checking " << t + bus.second << endl;
+        cout << "checking " << t + bus.second << endl;
         if ((t + bus.second) % bus.first != 0) {
             return false;
         }
@@ -15,8 +17,6 @@ bool check_cond(unsigned long long int t, vector<pair<int, int>> buses) {
 
     return true;
 }
-
-int mod(int a, int b) { return (b + (a % b)) % b; }
 
 int main() {
     string tmp;
@@ -59,5 +59,10 @@ int main() {
          << min_waiting_time << ". Answer is "
          << min_waiting_time * earliest_bus << endl;
 
-    // Second part using chinese remainder theorem
+    // Second part
+    // timestamp = t must satisfy following system of modular equations :
+    // t % bus[i] = (bus[i] - i) % bus[i]
+    // It can be solved really quickly using Chinese Remainder Theorem
+
+    cout << check_cond(905694340256752, bus) << endl;
 }
