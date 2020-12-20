@@ -38,7 +38,8 @@ deque<string> parse_expression(string line) {
             operator_stack.pop_back();
 
         } else if (token == "+" || token == "*") {
-            while (operator_stack.size() > 0 && operator_stack.back() != "(") {
+            while (operator_stack.size() > 0 && operator_stack.back() != "(" &&
+                   (token == "*" && operator_stack.back() == "+")) {
                 output.push_back(operator_stack.back());
                 operator_stack.pop_back();
             }
